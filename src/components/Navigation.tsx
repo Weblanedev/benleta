@@ -11,15 +11,15 @@ export default function Navigation() {
   const closeMobileMenu = () => setClick(false);
 
   const deskLinks = [
-    { name: 'Home', url: '/', svg: '/shop.svg' },
+    { name: 'About Us', url: '/about', svg: '/shop.svg' },
     { name: 'Privacy Policy', url: '/privacy', svg: '/shield.svg' },
-    { name: 'Contact Us', url: '/contact', svg: '/message-2.svg' },
+    { name: 'FAQs', url: '/faqs', svg: '/message-2.svg' },
   ];
 
   return (
     <div id='navbar' className='relative w-full '>
-      <nav className={`flex  items-center text-xl `}>
-        <div className='flex  w-full flex-row items-center justify-between bg-transparent lg:px-12 p-5'>
+      <nav className={`flex items-center text-xl `}>
+        <div className='flex w-full flex-row items-center justify-between bg-transparent lg:px-12 p-5'>
           <Link
             href='/'
             className=' flex flex-row cursor-pointer text-3xl no-underline  w-fit'
@@ -32,7 +32,7 @@ export default function Navigation() {
               className='h-[40px] w-[75px] lg:w-[115px] lg:h-[55px]'
             />
           </Link>
-          <div className=' block z-20 cursor-pointer  ' onClick={handleClick}>
+          <div className='block z-20 cursor-pointer' onClick={handleClick}>
             {click ? (
               <div className='block md:hidden'>
                 <div className='h-[1.5px] w-6 rotate-45 bg-[#132D46]'></div>
@@ -80,10 +80,10 @@ export default function Navigation() {
                   <Link
                     href={item.url}
                     key={index}
-                    className={`text-[16px] hover:text-[#099971] flex gap-2 ${
+                    className={`text-[16px] flex gap-2 ${
                       checkRoute(item.url)
-                        ? 'text-[#fff] hover:text-[#ffff]  rounded-full bg-[#099971] px-3 py-[5px] font-bold'
-                        : 'text-[#637381] hover:text-[#099971]'
+                        ? 'text-primary-800 hover:text-primary-700 py-[5px] font-bold underline transition-shadow'
+                        : 'text-primary-800 hover:text-primary-700 hover:underline'
                     }`}>
                     <Image
                       alt='link.svg'
@@ -100,6 +100,9 @@ export default function Navigation() {
               })}
             </div>
           </div>
+          <div className="bg-primary-800 text-white rounded-full px-4 py-2 text-lg">
+              <button>Contact</button>
+            </div>
         </div>
       </nav>
     </div>

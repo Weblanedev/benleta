@@ -3,46 +3,33 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import "swiper/css";
-
 import type { Metadata } from "next";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { ReactQueryProvider } from "./ReactQueryProvider";
 
+const title = "Benleta | Trusted Virtual Asset Service Provider (VASP)";
+const description =
+  "Benleta is a trusted Virtual Asset Service Provider based in Lithuania, offering secure and user-friendly crypto exchange services and wallet solutions across the EU. Our platform enables seamless and regulated digital asset transactions for businesses and individuals in the evolving digital economy.";
+
 export const metadata: Metadata = {
-  title: "Taja - Your trusted digital-assets-to-cash conversion platform",
-  description:
-    "Convert cryptocurrencies like USDT, BTC, and ETH to NGN instantly with Taja. Benefit from the best conversion rates, lightning-fast transfers, and dedicated customer support.",
+  title: title,
+  description: description,
   openGraph: {
-    title: "Taja - Your trusted digital-assets-to-cash conversion platform",
-    description:
-      "Taja is your ultimate solution for converting your digital-assets-to-cash seamlessly and securely. We offer USDT, BTC, or ETH to NGN, as well as the best conversion rates in the market, ensuring you maximize the value of your assets. With lightning-fast transfers completing within seconds, you can access your funds swiftly and efficiently. Our dedicated customer support team is always available to address your inquiries, resolve concerns, and provide assistance whenever you need it.",
-    url: "https://www.tajahq.com/",
-    siteName: "Taja",
+    title: title,
+    description: description,
+    url: "https://www.benleta.com/",
+    siteName: "Benleta",
     images: "/icon.png",
     type: "website",
-    countryName: "Nigeria",
-    locale: "en_NG"
+    countryName: "Lithuania",
+    locale: "lt-LT",
   },
-  keywords: [
-    "Digital-assets-to-cash conversion",
-    "Secure digital assets transactions",
-    "Digital assets to ngn",
-    "Digital assets to fiat",
-    "Convert USDT to NGN",
-    "BTC to NGN conversion",
-    "ETH to NGN exchange",
-    "Best conversion rates",
-    "Instant transfers",
-    "Dedicated customer support",
-    "Secure crypto transactions",
-    "Seamless integration"
-  ],
+  keywords: [""],
   icons: {
-    icon: '/icon.ico',
+    icon: "/icon.ico",
   },
 };
-
 
 const poppins = localFont({
   src: "./fonts/poppins.ttf",
@@ -64,7 +51,7 @@ export default function RootLayout({
   return (
     <>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon"/>
+        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
         <link
           rel="icon"
           href="/icon?<generated>"
@@ -87,6 +74,65 @@ export default function RootLayout({
           <main className="w-full flex flex-1 flex-col items-center justify-center overflow-hidden bg-white">
             <ReactQueryProvider>{children}</ReactQueryProvider>
           </main>
+          {/* <div className="bg-white w-full">
+            <p className="text-primary-50 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-100 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-200 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-300 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-400 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-500 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-600 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-700 mb-2 border-b ">jaypee</p>
+            <p className="text-primary-800 mb-2 border-b ">jaypee</p>
+          </div>
+          <div className="bg-primary-100 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-200 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-300 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-400 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-500 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-600 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-700 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-800 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-primary-900 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-secondary-100 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-secondary-200 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-secondary-300 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-secondary-400 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-secondary-500 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-secondary-600 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div>
+          <div className="bg-secondary-700 w-full mb-1">
+            <p className="text-white">jaypee</p>
+          </div> */}
           <Footer />
         </body>
       </html>
