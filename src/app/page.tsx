@@ -85,8 +85,8 @@ export default function Home() {
         </Marquee>
       </main>
 
-      <SectionTwo />
-      <SectionSix />
+      {/* <SectionTwo />
+      <SectionSix /> */}
       <SectionFive />
       <Standards />
     </>
