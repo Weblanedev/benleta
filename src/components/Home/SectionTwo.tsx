@@ -10,7 +10,7 @@ const SectionTwo = () => {
       <div className=" px-5 md:px-[40px] flex flex-col rounded-3xl w-full mb-4 pt-14 gap-7 items-center">
         <h3 className="text-center font-poppins lg:text-5xl xl:text-6xl md:text-4xl text-3xl font-semibold text-[#132D46] lg:leading-[5rem] leading-[2.5rem] tracking-tighter w-[95%]">
           We take pride in providing the most{" "}
-          <span className="text-[#01C38E]">
+          <span className="text-primary-300">
             competitive rates
           </span>{" "}
           to enhance your conversion experience.

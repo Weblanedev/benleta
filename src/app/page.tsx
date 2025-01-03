@@ -2,33 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { useQRCode } from "next-qrcode";
-import SlantSliders from "@/components/Sliders/SlantSliders";
 import SectionTwo from "@/components/Home/SectionTwo";
-import SectionFour from "@/components/Home/SectionFour";
-import FeaturedStores from "@/components/Home/FeaturedStores";
 import SectionFive from "@/components/Home/SectionFive";
 import SectionSix from "@/components/Home/BlurredCaption";
-import SectionSeven from "@/components/Home/SectionSeven";
-import { useRouter } from "next/navigation";
-import { FaApple } from "react-icons/fa";
-import { IoLogoAndroid } from "react-icons/io";
-import Testimonies from "@/components/Home/Testimonies";
 import Standards from "@/components/Home/Standards";
-// import Apple from ""
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
-  const { Canvas } = useQRCode();
-
-  const text = "Transform your crypto";
-  const secondText = " into cash";
-
-  const router = useRouter();
-  let secondWord = secondText.split(" ");
-
-  let words = text.split(" ");
-  const pngImagePaths = ["/images/ostar.png", "/images/ystar.png"];
-
   return (
     <>
       <main className="flex lg:min-h-[90vh] min-h-[50vh] flex-col items-center justify-between overflow-hidden md:mb-0 mb-4">
@@ -77,10 +57,35 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Marquee
+          className={`bg-primary-900 pt-[20px] pb-[14px] text-primary-300 text-xl font-[400] font-general`}
+          autoFill
+        >
+          <div className=" flex mx-4 flex-row gap-x-6">
+            {[
+              "Fast and Secure Digital Asset Conversions 💸",
+              "Transform Your Assets into Cash Instantly 🚀",
+              "Your Trusted Partner in Seamless Transactions 🤝",
+              "Innovative Solutions for Modern Finance 🌟",
+              "Where Convenience Meets Innovation 🛠️",
+              "Sign Up in Minutes and Get Started Instantly 🔐",
+              "Explore a Wide Range of Premium Services 🌍",
+              "Convert Digital Assets to Cash with Ease 💰",
+              "Secure Transactions Backed by Cutting-Edge Technology 🔒",
+              "Experience Hassle-Free Financial Management Today! ✨",
+              "Empowering You to Achieve Financial Freedom 🌟",
+              "Join Thousands Who Trust Benleta for Secure Conversions 🏆",
+              "Because Your Money Deserves Better Management 💼",
+              "Seamless Experiences, Maximum Satisfaction 🌐",
+              "Your Digital Assets, Transformed Effortlessly 🔄",
+            ].map((data) => {
+              return <div key={data}>{data}</div>;
+            })}
+          </div>
+        </Marquee>
       </main>
 
       <SectionTwo />
-      {/* <SectionFour /> */}
       <SectionSix />
       <SectionFive />
       <Standards />

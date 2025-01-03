@@ -101,12 +101,6 @@ const BlurredCaption = () => {
         </p>
 
         </div>
-        {/* <div className=" flex justify-center overflow-hidden">
-          <MidBlurText
-            text={"  more"}
-            blurSections={[1, 2]}
-          />
-        </div> */}
         <Image
           src={pngImagePaths[2]}
           width={100}
@@ -129,22 +123,6 @@ const BlurredCaption = () => {
           {/* <span className="blur-[2px] text-[rgba(255,255,255,.1)]">opping</span> */}
         </p>
       </div>
-
-      {/* <Image
-        src={"/images/footer.png"}
-        width={100}
-        height={100}
-        alt="pic.png"
-        className="absolute rotate-[14deg] top-[5%] md:top-[14%] lg:top-[1%] right-[5%] lg:right-[19%] md:right-[8%] h-10 w-10 md:h-14 md:w-14 lg:h-20 lg:w-20 rounded-lg md:rounded-2xl"
-      /> */}
-
-      {/* <Image
-        src={"/images/footer2.png"}
-        width={100}
-        height={100}
-        alt="pic.png"
-        className="absolute -rotate-[12deg] top-[75%] md:top-[72%] left-[5%] md:left-[0.5%] lg:left-[12%] h-10 w-10 md:h-14 md:w-14 lg:h-20 lg:w-20 rounded-lg md:rounded-2xl"
-      /> */}
     </div>
   );
 };

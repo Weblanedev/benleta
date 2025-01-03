@@ -107,14 +107,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col lg:flex-row lg:justify-between mt-20 md:mt-0">
           <div className="w-full lg:w-[24%]">
-            {/* <Image
-                                src="/assets/logo-white.png"
-                                width={150}
-                                height={42}
-                                alt="phone"
-                                className="lg:mt-[50px] lg:pt-[0px] pt-[56px]"
-                            /> */}
-            <p className="font-[300] lg:text-[20px] lgs:leadisng-[25px] text-[16px] leadwing-[24px] text-[#828288] text-left mt-12 lg:pb-[44px] pb-[35px] trascking-wider ">
+            <p className="font-general lg:text-[20px] lgs:leadisng-[25px] text-[16px] leadwing-[24px] text-[#828288] text-left mt-12 lg:pb-[44px] pb-[35px] trascking-wider ">
               Seamlessly bridging the gap between digital assets and everyday
               financial needs. Explore innovative solutions with Benleta
             </p>
@@ -126,7 +119,7 @@ const Footer = () => {
                 Company
               </div>
               <Link
-                href="/about"
+                href="/"
                 className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4`}
               >
                 About us

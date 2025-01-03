@@ -67,7 +67,7 @@ const FAQs = () => {
                 )}
               </div>
             ))}
-            <span className="text-[#01C38E] text-4xl md:text-5xl lg:text-6xl font-semibold py-1">
+            <span className="text-primary-300 text-4xl md:text-5xl lg:text-6xl font-semibold py-1">
               answers
             </span>
           </div>
