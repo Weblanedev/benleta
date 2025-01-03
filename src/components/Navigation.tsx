@@ -35,14 +35,15 @@ export default function Navigation() {
           </Link>
           <div className="block z-20 cursor-pointer" onClick={handleClick}>
             {click ? (
-              <div className="block md:hidden">
-                <div className="h-[1.5px] w-6 rotate-45 bg-[#132D46]"></div>
-                <div className="ml-auto mt-1 h-[1.5px] w-6 -rotate-45 bg-[#132D46]"></div>
+              <div className="rounded-full block md:hidden">
+                <div className="h-[1.5px] w-6 rotate-45 bg-black"></div>
+                <div className="ml-auto h-[1.5px] w-6 -rotate-45 bg-black"></div>
               </div>
             ) : (
               <div className="block md:hidden">
-                <div className={`h-[2px] w-6 bg-[#132D46]`} />
-                <div className={`ml-auto mt-2 h-[2px] w-4 bg-[#132D46]`} />
+                <div className={`h-[1.5px] mb-1 w-5 bg-[#132D46]`} />
+                <div className={`ml-auto mt-2 h-[1.5px] mb-1 w-5 bg-[#132D46]`} />
+                <div className={`ml-auto mt-2 h-[1.5px] mb-1 w-5 bg-[#132D46]`} />
               </div>
             )}
           </div>
@@ -51,19 +52,19 @@ export default function Navigation() {
           <ul
             className={`z-[2] pl-0 md:hidden ${
               click
-                ? "h-[100vh] top-0 fixed right-0 m-auto flex w-full list-none flex-col justify-center gap-[15px] bg-[#fff] text-center transition-all md:w-[60vw] md:justify-start"
-                : " m-auto mr-8 hidden list-none flex-col justify-center gap-[15px] text-center transition-all md:w-[60vw] md:justify-start"
+                ? "h-[100vh] top-0 fixed right-0 m-auto flex w-full list-none flex-col justify-start gap-[15px] bg-[#fff] text-left pt-20 transition-all md:w-[60vw] md:justify-start"
+                : " m-auto mr-8 hidden list-none flex-col justify-center gap-[15px] text-left transition-all md:w-[60vw] md:justify-start"
             }`}
           >
             {deskLinks.map((item, index) => {
               return (
-                <li key={index} className=" md:hidden">
+                <li key={index} className="border-b-[0.8px] mx-8 border-b-primary-200 md:hidden">
                   <Link
                     href={item.url}
                     onClick={() => {
                       closeMobileMenu();
                     }}
-                    className={`cursor-pointer font-mono text-lg uppercase text-[#132D46]`}
+                    className={`cursor-pointer font-general text-lg text-primary-300`}
                   >
                     {item.name}
                   </Link>
@@ -96,7 +97,7 @@ export default function Navigation() {
               })}
             </div>
           </div>
-          <div className="bg-primary-800 text-white rounded-full px-4 py-2 text-lg">
+          <div className="bg-primary-800 text-white rounded-full px-4 py-2 text-lg hidden md:block">
             <button>Contact</button>
           </div>
         </div>
