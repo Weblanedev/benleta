@@ -144,7 +144,7 @@ const Footer = () => {
                 Privacy policy
               </Link>
               <Link
-                href="/privacy"
+                href="/terms"
                 onClick={() => router.push("/privacy")}
                 className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4 whitespace-nowrap`}
               >

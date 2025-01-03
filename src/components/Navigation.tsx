@@ -12,8 +12,8 @@ export default function Navigation() {
   const closeMobileMenu = () => setClick(false);
 
   const deskLinks = [
-    { name: "About Us", url: "/about", svg: "/shop.svg" },
     { name: "Privacy Policy", url: "/privacy", svg: "/shield.svg" },
+    { name: "T & Cs", url: "/terms", svg: "/shop.svg" },
     { name: "FAQs", url: "/faqs", svg: "/message-2.svg" },
   ];
   const router = useRouter();
