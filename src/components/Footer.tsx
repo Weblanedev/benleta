@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="font-[400] lg:text-[20px] lg:leading-[25px] text-[16px] leading-[20px] text-[#828288] md:text-center mt-[16px] lg:pb-[44px] pb-[35px] md:mx-auto w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] tracking-wider">
+        <p className="font-general lg:text-[20px] lg:leading-[25px] text-[16px] leading-[20px] text-[#828288] md:text-center mt-[16px] lg:pb-[44px] pb-[35px] md:mx-auto w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] tracking-wider">
           Digital assets made easy with Benleta.
         </p>
         <div className="w-full flex justify-center gap-5 mt-3 items-center">
@@ -120,7 +120,7 @@ const Footer = () => {
               </div>
               <Link
                 href="/"
-                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4`}
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-general text-start mb-4`}
               >
                 About us
               </Link>
@@ -132,14 +132,14 @@ const Footer = () => {
               <Link
                 href="/privacy"
                 onClick={() => router.push("/privacy")}
-                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4 whitespace-nowrap`}
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-general text-start mb-4 whitespace-nowrap`}
               >
                 Privacy policy
               </Link>
               <Link
                 href="/terms"
                 onClick={() => router.push("/privacy")}
-                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4 whitespace-nowrap`}
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-general text-start mb-4 whitespace-nowrap`}
               >
                 Terms of use
               </Link>
@@ -150,13 +150,13 @@ const Footer = () => {
               </div>
               <Link
                 href="/contact"
-                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4 whitespace-nowrap`}
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-general text-start mb-4 whitespace-nowrap`}
               >
                 Contact us
               </Link>
               <Link
                 href="/"
-                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start`}
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-general text-start`}
               >
                 FAQs
               </Link>

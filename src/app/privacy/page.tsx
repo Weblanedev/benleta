@@ -163,7 +163,7 @@ const page = () => {
         changes are effective immediately, after they are posted on this page.
       </p>
       <p className="text-xl md:text-3xl font-semibold mt-4 mb-5">Contact Us</p>
-      <p className="text-black font-general">
+      <p className="text-black font-general mb-10">
         If you have any questions or suggestions about our Privacy Policy, do
         not hesitate to contact us.{" "}
       </p>
