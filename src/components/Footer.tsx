@@ -1,191 +1,221 @@
 "use client";
-
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaLongArrowAltUp,
+} from "react-icons/fa";
+import * as React from "react";
+import axios from "axios";
+import { UseCustomToast } from "../hooks/useCustomToast";
 import Link from "next/link";
-import { useQRCode } from "next-qrcode";
-import { checkRoute } from "@/utils/checkRoute";
+import animations from "@/utils";
 
-export default function Footer() {
-  const { Canvas } = useQRCode();
-  const text = "Convert your digital";
-  const secondText = "everyday cash!";
-  let secondWord = secondText.split(" ");
-  let words = text.split(" ");
-  const pngImagePaths = ["/images/ostar.png", "/images/ystar.png"];
-  const currentDate = new Date();
+const Footer = () => {
+  const router = useRouter();
+  const { hoverAnimation } = animations;
+  const { toaster } = UseCustomToast();
+  const [email, setEmail] = React.useState<string>("");
+  const [error, setError] = React.useState<string | undefined>();
+  const [loading, setLoading] = React.useState<boolean>(false);
 
+  const onSubmit = (e: any) => {
+    e.preventDefault();
+    if (email.length > 5 && email.includes("@") && email.includes(".com")) {
+      setError(undefined);
+      setLoading(true);
+
+      axios
+        .post(`${"BASEURL"}/utils/joinWaitlist`, { email })
+        .then((res) => {
+          toaster(res.data.message, "success", "font-semibold");
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(false);
+          if (err?.response?.data?.message) {
+            toaster(err.response.data.message, "error", "font-semibold");
+            return;
+          }
+          toaster("An error occurred", "error", "font-semibold");
+        });
+    } else {
+      setError("Invalid email");
+    }
+  };
   return (
-   
-    <footer className=" flex w-full md:w-[100%] mx-auto flex-col justify-center items-center px-5 pb-16 pt-36 bg-white gap-[7rem] lg:gap-[10rem]">
-        <div className="xl:w-[85%] lg:w-[90%] w-[100%]">
-          <div className="mb-24 ">
+    <div className="pt-10 bg-primary-900 w-full pb-8" id="footer">
+      <div className="bg-primary-900 w-full px-6">
+        <div className="md:mx-auto w-full md:w-[70%] lg:w-[60%] pt-14">
+          <div className="flex flex-row md:justify-center">
+            <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold md:text-center tracking-wide md:tracking-wider">
+              Empowering Your{" "}
+              <h2 className="footer-charcter text-white text-4xl sm:text-5xl lg:text-6xl font-semibold">
+                Financial Freedom
+              </h2>
+            </h2>
+          </div>
+        </div>
+
+        <p className="font-[400] lg:text-[20px] lg:leading-[25px] text-[16px] leading-[20px] text-[#828288] md:text-center mt-[16px] lg:pb-[44px] pb-[35px] md:mx-auto w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] tracking-wider">
+          Digital assets made easy with Benleta.
+        </p>
+        <div className="w-full flex justify-center gap-5 mt-3 items-center">
+          <a
+            href="https://apps.apple.com/"
+            target="_blank"
+            className=" py-2 px-2 text-white flex items-center justify-center gap-2"
+          >
             <Image
-              src={"/newtajalogo.png"}
-              className=""
-              width={150}
+              src={"/apple.svg"}
+              width={100}
               height={100}
               alt="pic.png"
+              className="lg:w-full w-[80%]"
             />
-            <p className="text-[#637381] text-sm leading-5 mt-4 font-general">
-              Convert your digital assets into everyday cash!
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/"
+            target="_blank"
+            className=" py-2 px-2 text-white flex items-center justify-center gap-2"
+          >
+            <Image
+              src={"/google.svg"}
+              width={100}
+              height={100}
+              alt="pic.png"
+              className="lg:w-full w-[80%]"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div className="bg-primary-900s px-6 lg:px-24">
+        <div
+          className="hidden md:flex ml-auto flex-row rounded-full h-12 w-12 border "
+          onClick={() => {
+            window?.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <FaLongArrowAltUp color="#fff" className="m-auto" /> 
+        </div>
+        <div className="flex flex-col lg:flex-row lg:justify-between mt-20 md:mt-0">
+          <div className="w-full lg:w-[24%]">
+            {/* <Image
+                                src="/assets/logo-white.png"
+                                width={150}
+                                height={42}
+                                alt="phone"
+                                className="lg:mt-[50px] lg:pt-[0px] pt-[56px]"
+                            /> */}
+            <p className="font-[300] lg:text-[20px] lgs:leadisng-[25px] text-[16px] leadwing-[24px] text-[#828288] text-left mt-12 lg:pb-[44px] pb-[35px] trascking-wider ">
+              Seamlessly bridging the gap between digital assets and everyday
+              financial needs. Explore innovative solutions with Benleta
             </p>
-
-            {/* <div className="rounded-xl">
-              <Canvas
-                text={"https://github.com/bunlong/next-qrcode"}
-                options={{
-                  level: "H",
-                  margin: 3,
-                  scale: 4,
-                  width: 100,
-                  color: {
-                    dark: "#000000",
-                    light: "#ffffff",
-                  },
-                }}
-              />
-            </div> */}
           </div>
-          <div className="flex flex-row justify-start xl:gap-5 lg:gap-3 gap-2 max-w-[100%] lg:max-w-[90%] xl:max-w-[85%] flex-wrap">
-            {words.map((word, index) => (
-              <div key={index} className="relative  flex flex-row">
-                <p className="text-4xl md:text-7xl lg:text-7xl font-bold flex align-middle md:py-2 text-[#132D46]">
-                  {word + " "}
-                </p>
-                {index == 1 && (
-                  <Image
-                    src={pngImagePaths[0]}
-                    width={100}
-                    height={100}
-                    alt="pic.png"
-                    className="w-3 h-3 md:w-7 md:h-7 mx-4 rounded-xl absolute -top-3"
-                  />
-                )}
-
-                {index == 3 && (
-                  <Image
-                    src={pngImagePaths[1]}
-                    width={100}
-                    height={100}
-                    alt="pic.png"
-                    className="w-3 h-3 md:w-7 md:h-7 mx-4 rounded-xl absolute top-0 md:right-2 md:-top-2"
-                  />
-                )}
+          {/* Footer Links */}
+          <div className="flex flex-row flex-wrap lg:flex-nowrap gap-12 md:gap-4 lg:justify-around w-full lg:w-[36%] lg:mt-[0px] mt-[64px]">
+            <div className="flex flex-col lg:mt-[50px] text-start">
+              <div className="text-[20px] leading-[25px] font-[500] text-[#ffffff] mb-[24px]">
+                Company
               </div>
-            ))}
-          </div>
-          <p className="text-4xl md:text-7xl lg:text-7xl font-bold flex align-middle md:py-2 text-[#132D46]">
-          assets into
-                </p>
-          <div className="flex flex-row justify-start xl:gap-5 lg:gap-3 gap-2 max-w-[100%] lg:max-w-[90%] xl:max-w-[80%] mb-16 flex-wrap tracking-tighter">
-            {secondWord.map((word, index) => (
-              <div key={index} className="relative flex-wrap flex flex-row">
-                <p className="text-4xl md:text-7xl lg:text-7xl font-bold flex align-middle md:py-2 text-[#132D46]">
-                  {word + " "}
-                </p>
-                {index == 0 && (
-                  <Image
-                    src={pngImagePaths[0]}
-                    width={100}
-                    height={100}
-                    alt="pic.png"
-                    className="w-3 h-3 md:w-7 md:h-7 mx-4 rounded-xl absolute -top-3"
-                  />
-                )}
+              <Link
+                href="/about"
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4`}
+              >
+                About us
+              </Link>
+            </div>
+            <div className="flex flex-col lg:mt-[50px]  ">
+              <div className="text-[20px] leading-[25px] font-[500] text-[#ffffff] text-start mb-[24px]">
+                Legal
               </div>
-            ))}
+              <Link
+                href="/privacy"
+                onClick={() => router.push("/privacy")}
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4 whitespace-nowrap`}
+              >
+                Privacy policy
+              </Link>
+              <Link
+                href="/privacy"
+                onClick={() => router.push("/privacy")}
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4 whitespace-nowrap`}
+              >
+                Terms of use
+              </Link>
+            </div>
+            <div className="flex flex-col lg:mt-[50px] ">
+              <div className="text-[20px] leading-[25px] font-[500] text-[#ffffff] text-start mb-[24px]">
+                Support
+              </div>
+              <Link
+                href="/contact"
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start mb-4 whitespace-nowrap`}
+              >
+                Contact us
+              </Link>
+              <Link
+                href="/"
+                className={`${hoverAnimation} text-[#828288]  text-lg leading-[25px] font-[400] text-start`}
+              >
+                FAQs
+              </Link>
+            </div>
           </div>
-          <div className="w-full flex gap-5 mt-3">
-            <a href="https://apps.apple.com/ng/app/taja/id6499518986" target="_blank" className=" py-2 px-2 text-white flex items-center justify-center gap-2">
-              <Image
-                      src={"/appleWhite.svg"}
-                      width={100}
-                      height={100}
-                      alt="pic.png"
-                      className="lg:w-full w-[80%]"
-                />
-                </a>
-
-                <a href="https://play.google.com/store/apps/details?id=com.itajainnovations.taja1" target="_blank" className=" py-2 px-2 text-white flex items-center justify-center gap-2">
-              <Image
-                      src={"/googleWhite.svg"}
-                      width={100}
-                      height={100}
-                      alt="pic.png"
-                      className="lg:w-full w-[80%]"
-                />
-                </a>
+          <div
+            className="ml-auto flex md:hidden flex-row h-12 w-12 rounded-full border items-center"
+            onClick={() => {
+              window?.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            <FaLongArrowAltUp color="#fff" className="m-auto" /> 
           </div>
         </div>
-     
-    <div className="w-full max-w-[100%] lg:max-w-[90%] xl:max-w-[85%]">
-      <div className="flex flex-col items-center justify-center ">
-        <div className="my-5 ">
-          <p className="text-[#637381] text-sm md:text-md font-general">
-            taja focuses on giving you a seamless shopping experience by
-            removing the stress of global delivery and payment. With us, you
-            have the freedom to shop globally from any store with the assurance
-            that your package will be delivered to your preferred shopping.
-          </p>
-        </div>
 
-        <div className="w-full flex flex-col md:flex-row justify-between text-[#CBD1D7] font-general">
-          <p>©{currentDate.getFullYear()} taja. All rights reserved.</p>
-
-          <div className="flex flex-row mt-4 md:mt-0">
-            <Link href="/privacy">
-              <p className="mr-5 text-white">Terms of Service</p>
-            </Link>
-            <Link href="/privacy">
-              <p className="mr-5 text-white">Privacy Policy</p>
-            </Link>
+        <div className="flex flex-col gap-y-3 md:w-full md:flex-row md:items-center md:justify-between">
+          <div className="font-[300] lg:text-[20px] lg:leading-[25px] text-[16px] leading-[20px] text-[#828288] text-center md:text-left lg:mt-[45px] mt-[40px] mb-[1rem]">
+            © {new Date().getFullYear()} Benleta, All right reserved.
+          </div>
+          <div className="flex flex-row lg:mt-[24px]">
+            <a
+              href="https://www.linkedin.com/company/"
+              className="bg-[#ffffff10] hover:bg-[#ffffff50] p-3 rounded-full mr-[16px]"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin color="#fff" size={24} />
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              className="bg-[#ffffff10] hover:bg-[#ffffff50] p-3 rounded-full mr-[16px]"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaInstagram color="#fff" size={24} />
+            </a>
+            <a
+              href="https://twitter.com/"
+              className="bg-[#ffffff10] hover:bg-[#ffffff50] p-3 rounded-full mr-[16px]"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaTwitter color="#fff" size={24} />
+            </a>
           </div>
         </div>
       </div>
-
-      <div className="w-full flex gap-5 mt-3 justify-center">
-            <a href="https://www.facebook.com/tajahq?mibextid=LQQJ4d" target="_blank" className=" py-2 px-2 text-white flex items-center justify-center gap-2">
-              <Image
-                      src={"/facebook.png"}
-                      width={100}
-                      height={100}
-                      alt="pic.png"
-                      className="w-[80%]"
-                />
-                </a>
-
-                <a href="https://www.instagram.com/taja_hq?igsh=dnNhNWFidzkwMHo1" target="_blank" className=" py-2 px-2 text-white flex items-center justify-center gap-2">
-              <Image
-                      src={"/Instagram.png"}
-                      width={100}
-                      height={100}
-                      alt="pic.png"
-                      className=" w-[80%]"
-                />
-                </a>
-
-                <a href="https://x.com/Taja_hq" target="_blank" className=" py-2 px-2 text-white flex items-center justify-center gap-2">
-              <Image
-                      src={"/twitter.png"}
-                      width={100}
-                      height={100}
-                      alt="pic.png"
-                      className=" w-[80%]"
-                />
-                </a>
-
-                <a href="https://t.me/+KcDqdhVUm4UyM2Q0" target="_blank" className=" py-2 px-2 text-white flex items-center justify-center gap-2">
-              <Image
-                      src={"/telegram.png"}
-                      width={100}
-                      height={100}
-                      alt="pic.png"
-                      className="w-[80%]"
-                />
-                </a>
-          </div>
-      </div>
-      
-    </footer>
+    </div>
   );
-}
+};
+
+export default Footer;
