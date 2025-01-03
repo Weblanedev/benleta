@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return (
     <main className="px-4 md:px-12 xl:px-16 pt-12 md:pt-20 text-black">
-      <h1 className="text-4xl md:text-7xl text-center font-bold mb-10">
+      <h1 className="text-4xl md:text-7xl text-center font-bold mb-10 text-primary-300">
         Privacy Policy
       </h1>
       <p className="text-black font-general">

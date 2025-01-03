@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { checkRoute } from "@/utils/checkRoute";
+import { useRouter } from "next/navigation";
 
 export default function Navigation() {
   const [click, setClick] = React.useState(false);
@@ -15,14 +16,14 @@ export default function Navigation() {
     { name: "Privacy Policy", url: "/privacy", svg: "/shield.svg" },
     { name: "FAQs", url: "/faqs", svg: "/message-2.svg" },
   ];
-
+  const router = useRouter();
   return (
     <div id="navbar" className="relative w-full ">
       <nav className={`flex items-center text-xl `}>
-        <div className="flex w-full flex-row items-center justify-between bg-transparent lg:px-12 p-5">
+        <div className="flex w-full flex-row items-center justify-between bg-transparent lg:px-12 p-5 md:pt-2 md:pb-5">
           <Link
             href="/"
-            className=" flex flex-row cursor-pointer text-3xl no-underline  w-fit"
+            className=" flex flex-row cursor-pointer text-3xl no-underline w-fit"
             onClick={closeMobileMenu}
           >
              <Image
@@ -30,7 +31,7 @@ export default function Navigation() {
               height={80}
               src={"/logo.png"}
               alt="logo.png"
-              className="-mt-8 -ml-4"
+              className="w-20 -mt-4 md:w-32 -ml-4 md:-mt-6 md:-ml-4"
             />
           </Link>
           <div className="block z-20 cursor-pointer" onClick={handleClick}>
@@ -41,9 +42,9 @@ export default function Navigation() {
               </div>
             ) : (
               <div className="block md:hidden">
-                <div className={`h-[1.5px] w-5 bg-[#00000000]`} />
-                <div className={`ml-auto mt-2 h-[1.5px] w-5 bg-[#00000000]`} />
-                <div className={`ml-auto mt-2 h-[1.5px] w-5 bg-[#00000000]`} />
+                <div className={`h-[1.5px] w-5 bg-[#000000]`} />
+                <div className={`ml-auto mt-2 h-[1.5px] w-5 bg-[#000000]`} />
+                <div className={`ml-auto mt-2 h-[1.5px] w-5 bg-[#000000]`} />
               </div>
             )}
           </div>
@@ -98,7 +99,7 @@ export default function Navigation() {
             </div>
           </div>
           <div className="bg-primary-800 text-white rounded-full px-4 py-2 text-lg hidden md:block">
-            <button>Contact</button>
+            <button onClick={()=>router.push("/contact")}>Contact</button>
           </div>
         </div>
       </nav>

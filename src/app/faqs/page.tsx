@@ -10,7 +10,7 @@ const Page = () => {
     return (
             <main className="pt-24 md:pt-40 text-primary-800 px-3 md:px-12 xl:px-16">
                 <div className="mb-5 md:mb-12 flex flex-col md:flex-row md:justify-between gap-4 md:gap-x-8 w-full md:items-center">
-                    <h1 className="text-5xl md:text-7xl font-bold">
+                    <h1 className="text-5xl md:text-7xl font-bold text-primary-300">
                         Frequently Asked Questions
                     </h1>
                     <p className=" sm:text-xl md:text-right">

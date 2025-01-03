@@ -80,34 +80,10 @@ export default function Home() {
       </main>
 
       <SectionTwo />
-
-      {/* <FeaturedStores
-        heading={
-          <>
-            Not all... but here's some <br />
-            of our stores
-          </>
-        }
-        footnote={
-          <>
-            Can't see what you like, get the link of the store <br /> you want
-            to shop at, and paste it in the search button.
-          </>
-        }
-      /> */}
       {/* <SectionFour /> */}
       <SectionSix />
-      {/* Section Five */}
       <SectionFive />
-      {/* Section Seven */}
-
       <Standards />
-      {/* <Testimonies/> */}
-      <SectionSeven />
-
-      {/* <div className="w-full my-40 -rotate-[3deg] overflow-x-hidden">
-        <SlantSliders />
-      </div> */}
     </>
   );
 }
