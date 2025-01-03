@@ -25,12 +25,12 @@ export default function Navigation() {
             className=" flex flex-row cursor-pointer text-3xl no-underline  w-fit"
             onClick={closeMobileMenu}
           >
-            <Image
+             <Image
               width={150}
               height={80}
-              src={"/newtajalogo.png"}
+              src={"/logo.png"}
               alt="logo.png"
-              className="h-[40px] w-[75px] lg:w-[115px] lg:h-[55px]"
+              className="-mt-8 -ml-4"
             />
           </Link>
           <div className="block z-20 cursor-pointer" onClick={handleClick}>
@@ -41,9 +41,9 @@ export default function Navigation() {
               </div>
             ) : (
               <div className="block md:hidden">
-                <div className={`h-[1.5px] mb-1 w-5 bg-[#132D46]`} />
-                <div className={`ml-auto mt-2 h-[1.5px] mb-1 w-5 bg-[#132D46]`} />
-                <div className={`ml-auto mt-2 h-[1.5px] mb-1 w-5 bg-[#132D46]`} />
+                <div className={`h-[1.5px] w-5 bg-[#00000000]`} />
+                <div className={`ml-auto mt-2 h-[1.5px] w-5 bg-[#00000000]`} />
+                <div className={`ml-auto mt-2 h-[1.5px] w-5 bg-[#00000000]`} />
               </div>
             )}
           </div>
@@ -97,7 +97,9 @@ export default function Navigation() {
               })}
             </div>
           </div>
-         
+          <div className="bg-primary-800 text-white rounded-full px-4 py-2 text-lg hidden md:block">
+            <button>Contact</button>
+          </div>
         </div>
       </nav>
     </div>
