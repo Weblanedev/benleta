@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "img": "/screens/1.png"
+    }, 
+    {
+        "id": 2,
+        "img": "/screens/2.png"
+    }, 
+    {
+        "id": 3,
+        "img": "/screens/2.png"
+    }, 
+    {
+        "id": 4,
+        "img": "/screens/5.png"
+    }, 
+    {
+        "id": 5,
+        "img": "/screens/4.png"
+    }, 
+    {
+        "id": 6,
+        "img": "/screens/3.png"
+    },
+    {
+        "id": 7,
+        "img": "/screens/2.png"
+    },
+    {
+        "id": 8,
+        "img": "/screens/5.png"
+    },    
+    {
+        "id": 9,
+        "img": "/screens/1.png"
+    },    
+    {
+        "id": 10,
+        "img": "/screens/4.png"
+    }
+]

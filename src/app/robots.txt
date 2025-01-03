@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://tajahq.com/sitemap.xml

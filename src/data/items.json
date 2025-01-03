@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "name" : "AliExpress",
+        "img": "/aliexpress.jpg",
+        "url": "https://www.aliexpress.com/",
+        "logo": "/Aliexpress_logo.png"
+
+
+    }, 
+    {
+        "id": 2,
+        "name" : "SHEIN",
+        "img": "/shein.jpg",
+        "url": "https://www.shein.com/",
+        "logo": "/shein_logo.png"
+
+    }, 
+    {
+        "id": 3,
+        "name" : "Women's Best ",
+        "img": "../images/womenBest.jpg",
+        "url": "https://eu.womensbest.com/",
+        "logo": "../images/women's_logo.png"
+
+    }, 
+    {
+        "id": 4,
+        "name" : "Boohoo",
+        "img": "../images/boohoo.jpg",
+        "url": "https://www.boohoo.com/",
+        "logo": "../images/boohoo_logo.png"
+    }, 
+    {
+        "id": 5,
+        "name" : "PrettyLittleThing",
+        "img": "/pretty.jpg",
+        "url": "https://www.prettylittlething.com/",
+        "logo": "../images/pretty_logo.png"
+
+    }, 
+    {
+        "id": 6,
+        "name" : "DESIRÉE IYAMAH",
+        "img": "https://itaja-bucket.s3.us-west-2.amazonaws.com/store-images/desire%20iyama.jpg",
+        "url": "https://desireeiyama.com/",
+        "logo": "/desiree.png"
+
+    },
+    {
+        "id": 7,
+        "name" : "Dye Lab",
+        "img": "https://itaja-bucket.s3.us-west-2.amazonaws.com/store-images/dye%20lab.webp",
+        "url": "https://dyelab.ng/",
+        "logo": "/dye.png"
+
+    },
+    {
+        "id": 8,
+        "name" : "Glitz Allure Fabrics",
+        "img": "https://itaja-bucket.s3.us-west-2.amazonaws.com/store-images/487d6c_7bdffd397f5544bf9b4586e4734c2f48~mv2.jpeg",
+        "url": "https://www.glitzallurefabrics.com/",
+        "logo": "/allures.png"
+
+    }
+    
+]
